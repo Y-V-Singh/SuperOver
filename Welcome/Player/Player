@@ -1,0 +1,25 @@
+package Welcome.Player;
+
+public class Player {
+    private String name;
+    private int Runs;//Total Runs
+    private int cr;//Last Match Runs
+    // Getters and Setters
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+        this.cr=0;
+    }
+    public int getScore() {
+        return Runs;
+    }
+    public int getLastMatchRuns() {
+        return cr;
+    }
+    public void setScore(int score) {
+        this.cr = score;
+        this.Runs+= cr;
+    }
+}
