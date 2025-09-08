@@ -1,0 +1,79 @@
+package Welcome;
+
+import Welcome.Player.Player; 
+import java.util.*;
+public class Welcome {
+    public static void main(String[] args) {
+        System.out.println("Welcome to Super Over!🤗");
+        System.out.println("Get ready for an exciting game!");
+        System.out.println("Let's play!🏏");
+        Scanner sc=new Scanner(System.in);
+        int n=0;
+        Game g=new Game();// Create an instance of Game
+        DataBase db=new DataBase();
+        
+       for(int i=0;i<(Integer.MAX_VALUE)/12;i++){}
+                 //for(int i=Integer.MIN_VALUE;i<Integer.MAX_VALUE;i++){}
+                // for(int i=Integer.MIN_VALUE;i<Integer.MAX_VALUE;i++){}
+                 
+        while(n!=5)
+        {
+                System.out.println("Case 1 Register New Player");
+        System.out.println("Case 2 Pick from existing players");
+        System.out.println("Case 3 View History");
+        System.out.println("Case 4 View LeaderBoard");
+        System.out.println("Case 5 Exit");
+        System.out.println("Please select an option:"); 
+            n=sc.nextInt();
+            switch(n) 
+            {
+                case 1:
+                {
+                System.out.println("Registering New Player Name...");
+                // Code to register a new player
+                String name = sc.next();
+                Player P = new Player();
+                P.setName(name);
+                g.addPlayer(P);
+                
+                for(int i=0;i<(Integer.MAX_VALUE)/12;i++){} 
+        
+                break;
+                }
+                case 2:
+                {
+                System.out.println("Picking from existing players...");
+                g.printPlayers();
+                int a= sc.nextInt();
+                int b= sc.nextInt();
+                System.out.println("May the best Player win!");
+                System.out.println("Enjoy the game!🎉");
+                System.out.println("Good luck to both Players!🍀");
+                g.startGame(a, b,db);
+                
+                 for(int i=0;i<(Integer.MAX_VALUE)/12;i++){}
+                break;
+                }
+                case 3:
+                System.out.println("Viewing History...");
+                db.printMatches();
+                
+                 for(int i=0;i<(Integer.MAX_VALUE)/12;i++){}
+                break;
+                case 4:
+                System.out.println("Viewing LeaderBoard...");
+                g.printRankings();
+                for(int i=0;i<(Integer.MAX_VALUE)/12;i++){}
+                 
+                break;
+                case 5:
+                System.out.println("Exiting...");
+                System.out.println("Thank you for playing Super Over! Goodbye!👋");
+                
+                break;
+                default:
+                break;
+            }
+        }
+    }
+}
