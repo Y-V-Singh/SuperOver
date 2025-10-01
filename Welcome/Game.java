@@ -9,24 +9,11 @@ public class Game extends DataBase {
         int id = players.size() + 1;
         players.put(id, player);
         rank.add(player);
-        Collections.sort(rank, new Comparator<Player>() 
-        {
-    @Override
-    public int compare(Player a, Player b) {
-        return b.getScore() - a.getScore();
-    }
-         });
-  
+        Collections.sort(rank, (a, b) -> b.getScore() - a.getScore());
         System.out.println("Player " + player.getName() + " registered successfully!");
     }
     public void updateRankings() {
-        Collections.sort(rank, new Comparator<Player>() {
-    @Override
-    public int compare(Player a, Player b) {
-        return b.getScore() - a.getScore();
-    }
-});
-
+        Collections.sort(rank, (a, b) -> b.getScore() - a.getScore()); 
     }
     public void printRankings() {
         System.out.println("Leaderboard:");
@@ -77,3 +64,4 @@ public class Game extends DataBase {
         updateRankings();
     }
 }
+
